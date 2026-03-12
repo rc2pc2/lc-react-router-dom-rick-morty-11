@@ -294,6 +294,10 @@ header h1 {
   transition: background-color var(--transition-speed) ease, transform 0.1s ease;
 }
 
+a.active {
+  color: var(--accent-hover);
+}
+
 .btn:hover {
   background-color: var(--accent-hover);
 }

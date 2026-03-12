@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import CharactersListPage from "./pages/characters/CharactersListPage";
 import CharacterDetailPage from "./pages/characters/CharacterDetailPage";
+import AboutPage from "./pages/AboutPage";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Routes>
         <Route element={<DefaultLayout />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/characters" element={< CharactersListPage />} />
           <Route path="/characters/:id" element={< CharacterDetailPage />} />
           <Route path="*" element={< NotFound />} />
