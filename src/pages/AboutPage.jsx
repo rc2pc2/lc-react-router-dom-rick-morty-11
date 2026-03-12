@@ -1,10 +1,30 @@
+import { useCount } from "../contexts/CountContext";
+
+
 export default function AboutPage() {
+    const [data, setData] = useCount();
+
+    function addProductToCart() {
+        setData({ ...data, cartProducts: data.cartProducts + 1 });
+    }
+
     return (
         <main className="container">
             <header>
                 <h1 className="hero-title">
                     <span className="text-accent">Rick & Morty</span> #WDPT11
                 </h1>
+                <h3>
+                    Counter: {data.cartProducts}
+                </h3>
+                <div>
+                    <button
+                        className="btn btn-large"
+                        onClick={addProductToCart}
+                    >
+                        Aggiungi al carrello
+                    </button>
+                </div>
             </header>
 
             <article>

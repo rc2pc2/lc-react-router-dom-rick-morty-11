@@ -11,10 +11,6 @@ export default function DefaultLayout() {
             <main>
                 <Outlet />
             </main>
-
-            <footer>
-                {/* FOOTER */}
-            </footer>
         </>
     )
 }

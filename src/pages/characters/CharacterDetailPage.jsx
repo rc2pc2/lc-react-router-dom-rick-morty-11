@@ -2,8 +2,11 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import CharacterListCard from "../../components/CharacterListCard";
+import { useCount } from "../../contexts/CountContext";
+
 
 export default function CharacterDetailPage() {
+    const [data] = useCount();
     const { id } = useParams();
     const [character, setCharacter] = useState();
     const navigate = useNavigate();
@@ -12,7 +15,6 @@ export default function CharacterDetailPage() {
         axios.get(`https://rickandmortyapi.com/api/character/${id}`)
             .then(response => setCharacter(response.data))
             .catch(error => {
-                // navigate(-1)
                 navigate("/characters")
             })
     }
@@ -29,6 +31,9 @@ export default function CharacterDetailPage() {
                     <h1>
                         Single Character Page : {character.name}, {character.species},  {character.status}
                     </h1>
+                    <h3>
+                        {data.darkMode ? 'dark mode attiva' : 'dark mode inattiva'}
+                    </h3>
 
                     <CharacterListCard
                         character={character}

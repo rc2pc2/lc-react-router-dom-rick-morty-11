@@ -1,12 +1,21 @@
 import { Link } from "react-router-dom";
+import { useCount } from "../contexts/CountContext";
+import { useState } from "react";
+
 
 export default function HomePage() {
+    const [data, setData] = useCount();
+
     return (
         <section className="hero-section">
             <div className="hero-content">
                 <h1 className="hero-title">
                     <br />
                     <span className="text-accent">Rick and Morty</span>
+                    <br />
+                    <span>
+                        Prodotti nel carrello:  {data.cartProducts}
+                    </span>
                 </h1>
 
                 <p className="hero-subtitle">
