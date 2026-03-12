@@ -29,14 +29,27 @@ export default function CharactersListPage() {
     return (
         <main className="container">
             <header>
-                <h1>
-                    React Data Fetching: Rick & Morty
-                </h1>
-
                 <section className="pagination">
 
-                    {page > 1 ? (<button className="pagination-button" onClick={prevPage}>Previous Page</button>) : ('')}
-                    <button className="pagination-button" onClick={nextPage}>Next Page</button>
+                    <h1>Database Personaggi</h1>
+                    <section className="pagination">
+                        <button
+                            className="btn btn-secondary pagination-button"
+                            onClick={prevPage}
+                            disabled={page === 1}
+                        >
+                            ← Precedente
+                        </button>
+
+                        <span className="pagination-info">Pagina {page}</span>
+
+                        <button
+                            className="btn btn-secondary pagination-button"
+                            onClick={nextPage}
+                        >
+                            Successiva →
+                        </button>
+                    </section>
                 </section>
             </header>
 

@@ -1,20 +1,32 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
     return (
-        <>
-            <header>
-                <h1>
-                    Rick & Morty HOMEPAGE
+        <section className="hero-section">
+            <div className="hero-content">
+                <h1 className="hero-title">
+                    <br />
+                    <span className="text-accent">Rick and Morty</span>
                 </h1>
-                <ul>
-                    <li>
-                        <Link to="/characters">
-                            View character list
-                        </Link>
-                    </li>
-                </ul>
-            </header>
-        </>
-    )
+
+                <p className="hero-subtitle">
+                    L'applicazione definitiva per imparare a navigare tra i componenti, con la fantastica partecipazione di WDPT11!
+                </p>
+
+                <div className="hero-actions">
+                    <Link to="/characters" className="btn btn-large">
+                        Inizia l'esplorazione
+                    </Link>
+                    <a
+                        href="https://rickandmortyapi.com/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn-secondary btn-large"
+                    >
+                        Documentazione API
+                    </a>
+                </div>
+            </div>
+        </section>
+    );
 }
